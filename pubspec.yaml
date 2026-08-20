@@ -2,7 +2,7 @@ name: contoured_shadow
 description: >-
   Soft, shape-following shadows for Flutter widgets via a RenderObject that
   blurs the child silhouette. Ideal for cutout images, icons, and irregular shapes.
-version: 0.1.0
+version: 0.2.0
 homepage: https://github.com/Ayushd70/contoured_shadow
 repository: https://github.com/Ayushd70/contoured_shadow
 issue_tracker: https://github.com/Ayushd70/contoured_shadow/issues

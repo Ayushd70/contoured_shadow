@@ -28,8 +28,15 @@ class ContouredShadowDemo extends StatelessWidget {
   }
 }
 
-class DemoHomePage extends StatelessWidget {
+class DemoHomePage extends StatefulWidget {
   const DemoHomePage({super.key});
+
+  @override
+  State<DemoHomePage> createState() => _DemoHomePageState();
+}
+
+class _DemoHomePageState extends State<DemoHomePage> {
+  bool _shadowEnabled = true;
 
   @override
   Widget build(BuildContext context) {
@@ -85,6 +92,48 @@ class DemoHomePage extends StatelessWidget {
               offset: Offset(2, 6),
               opacity: 0.22,
               child: _StarShape(),
+            ),
+          ),
+          const SizedBox(height: 20),
+          _DemoCard(
+            title: 'Toggle enabled',
+            child: Column(
+              children: [
+                ContouredShadow(
+                  enabled: _shadowEnabled,
+                  blurSigma: 10,
+                  offset: const Offset(0, 8),
+                  opacity: 0.3,
+                  child: const Icon(
+                    Icons.favorite_rounded,
+                    size: 88,
+                    color: Color(0xFFE11D48),
+                  ),
+                ),
+                const SizedBox(height: 20),
+                SwitchListTile(
+                  contentPadding: EdgeInsets.zero,
+                  title: const Text('Shadow enabled'),
+                  value: _shadowEnabled,
+                  onChanged: (value) => setState(() => _shadowEnabled = value),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(height: 20),
+          const _DemoCard(
+            title: 'Asymmetric blur',
+            child: ContouredShadow(
+              blurSigma: 6,
+              blurSigmaX: 18,
+              blurSigmaY: 4,
+              offset: Offset(0, 10),
+              opacity: 0.3,
+              child: Icon(
+                Icons.hexagon_rounded,
+                size: 96,
+                color: Color(0xFF0F766E),
+              ),
             ),
           ),
         ],
