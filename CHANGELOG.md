@@ -1,3 +1,7 @@
+## 0.2.1
+
+* Use Material in example cards so SwitchListTile ink is valid under Flutter 3.47.
+
 ## 0.2.0
 
 * Additive APIs on `ContouredShadow` / `RenderContouredShadow`:

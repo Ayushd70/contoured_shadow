@@ -152,11 +152,10 @@ class _DemoCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
 
-    return DecoratedBox(
-      decoration: BoxDecoration(
-        color: scheme.surface,
-        borderRadius: BorderRadius.circular(20),
-      ),
+    return Material(
+      color: scheme.surface,
+      elevation: 0,
+      borderRadius: BorderRadius.circular(20),
       child: Padding(
         padding: const EdgeInsets.fromLTRB(20, 18, 20, 28),
         child: Column(
